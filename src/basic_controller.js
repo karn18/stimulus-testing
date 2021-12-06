@@ -6,5 +6,6 @@ export default class extends Controller {
   copy () {
     this.targets.find("output").value =
       this.targets.find("input").value;
+    a = 'hello'
   }
 }

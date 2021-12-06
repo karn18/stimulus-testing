@@ -15,7 +15,7 @@
   },
   "scripts": {
     "test": "jest --coverage",
-    "lint": "eslint"
+    "lint": "eslint src"
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.0.1",
