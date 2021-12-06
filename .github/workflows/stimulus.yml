@@ -32,18 +32,6 @@ jobs:
     - uses: borales/actions-yarn@v2.3.0
       with:
         cmd: test 
-    - name: Code Coverage Summary Report
-      uses: irongut/CodeCoverageSummary@v1.2.0
-      with:
-        filename: coverage.cobertura.xml
-        badge: true
-        fail_below_min: true
-        format: markdown
-        hide_branch_rate: false
-        hide_complexity: true
-        indicators: true
-        output: both
-        thresholds: '60 80'
 
   eslint:
     runs-on: ubuntu-latest
