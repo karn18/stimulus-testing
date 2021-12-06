@@ -23,7 +23,6 @@ describe("BasicController", () => {
       button.click();
 
       expect(output.value).toEqual("foo");
-      expect('a').toEqual("c")
     });
   });
 });
