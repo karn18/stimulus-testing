@@ -6,6 +6,7 @@
 With testing, we can sparkle our website by using **STIMULUS** with sparking joy and confidence.
 
 ## How to test
+- Install dependencies with `yarn install` or `npm install`
 - Write the controller classes in `src`
 - Write the tests in `test`
 - Run `yarn test` or `npm test`
