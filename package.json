@@ -19,7 +19,7 @@
     "jest": "^27.4.3"
   },
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest --ci --json --coverage --testLocationInResults --outputFile=coverage/report.json",
     "lint": "eslint --ext .js,.ts src test/**/*.test*"
   },
   "dependencies": {
