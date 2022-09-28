@@ -32,9 +32,9 @@ jobs:
     - uses: borales/actions-yarn@v3.0.0
       with:
         cmd: test 
-    - uses: artiomtr/jest-coverage-report-action@v2
-      with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Jest coverage report
+      uses: ArtiomTr/jest-coverage-report-action@v2.1.1
+
 
   eslint:
     runs-on: ubuntu-latest
