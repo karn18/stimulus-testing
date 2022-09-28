@@ -9,7 +9,7 @@
     "sourceType": "module"
   },
   "rules": {
-    "semi": ["error", "always"],
+    "semi": ["error", "never"],
     "quotes": 0
   }  
 }
