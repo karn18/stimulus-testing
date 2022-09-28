@@ -10,6 +10,7 @@
   },
   "rules": {
     "semi": ["error", "never"],
-    "quotes": 0
+    "space-before-function-paren": "error",
+    "quotes": "off"
   }  
 }
