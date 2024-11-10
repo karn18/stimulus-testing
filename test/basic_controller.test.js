@@ -1,28 +1,30 @@
 import { Application } from '@hotwired/stimulus'
-import BasicController from '../src/basic_controller'
+import { beforeEach, describe, expect, test } from 'vitest'
 
-describe("BasicController", () => {
-  describe("#copy", () => {
+import BasicController from '@/basic_controller'
+
+describe('BasicController', () => {
+  describe('#copy', () => {
     beforeEach(() => {
       document.body.innerHTML = `<div data-controller="basic">
-        <input id="input" data-basic-target="input" />
-        <input id="output" data-basic-target="output" />
+        <input id="input" data-basic-target="input" type="text" />
+        <input id="output" data-basic-target="output" type="text" />
         <button id="button" data-action="basic#copy" />
       </div>`
 
       const application = Application.start()
-      application.register("basic", BasicController)
+      application.register('basic', BasicController)
     })
 
-    it("copies input and sets it on output", () => {
-      const input = document.getElementById("input")
-      const output = document.getElementById("output")
-      const button = document.getElementById("button")
+    test('copies input and sets it on output', () => {
+      const input = document.getElementById('input')
+      const output = document.getElementById('output')
+      const button = document.getElementById('button')
 
-      input.value = "foo"
+      input.value = 'foo'
       button.click()
 
-      expect(output.value).toEqual("foo")
+      expect(output.value).toEqual('foo')
     })
   })
 })

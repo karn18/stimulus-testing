@@ -1,10 +1,9 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from '@hotwired/stimulus'
 
 export default class extends Controller {
-  static targets = ["input", "output"]
+  static targets = ['input', 'output']
 
-  copy () {
-    this.targets.find("output").value =
-      this.targets.find("input").value
+  copy() {
+    this.targets.find('output').value = this.targets.find('input').value
   }
 }

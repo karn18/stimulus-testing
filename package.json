@@ -1,28 +1,32 @@
 {
-  "name": "awesome_stimulus",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "stimulus_testing",
+  "version": "2.0.0",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/eslint-parser": "^7.16.3",
-    "@babel/preset-env": "^7.16.4",
-    "@testing-library/dom": "^8.18.1",
-    "@testing-library/jest-dom": "^5.16.5",
-    "babel-jest": "^27.4.2",
-    "eslint": "^8.24.0",
-    "eslint-config-standard": "^17.0.0",
+    "@eslint/js": "^9.14.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/bun": "latest",
+    "@vitest/coverage-v8": "2.1.4",
+    "eslint": "^9.14.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.3.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.1",
-    "jest": "^27.4.3"
+    "globals": "^15.12.0",
+    "happy-dom": "^15.11.0",
+    "prettier": "^3.3.3",
+    "vitest": "^2.1.4"
   },
   "scripts": {
-    "test": "jest --ci --json --coverage --testLocationInResults --outputFile=coverage/report.json",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
     "lint": "eslint --ext .js,.ts src test/**/*.test*"
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.0.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   }
 }
