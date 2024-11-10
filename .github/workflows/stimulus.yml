@@ -14,48 +14,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Get yarn cache directory path
-      id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn cache dir)"
+    - uses: actions/checkout@v4.2.2
+    - uses: oven-sh/setup-bun@v2.0.1
+    - run: bun install
+    - run: bun run test
 
-    - uses: actions/cache@v2
-      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-      with:
-        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
-    - uses: borales/actions-yarn@v3.0.0
-      with:
-        cmd: install
-    - uses: borales/actions-yarn@v3.0.0
-      with:
-        cmd: test 
-    - name: Jest coverage report
-      uses: ArtiomTr/jest-coverage-report-action@v2.1.1
-      with:
-        coverage-file: ./coverage/report.json
-
-  eslint:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Get yarn cache directory path
-      id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn cache dir)"
-
-    - uses: actions/cache@v2
-      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-      with:
-        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
-    - uses: borales/actions-yarn@v3.0.0
-      with:
-        cmd: install
-    - uses: borales/actions-yarn@v3.0.0
-      with:
-        cmd: lint
+    - uses: actions/checkout@v4.2.2
+    - uses: oven-sh/setup-bun@v2.0.1
+    - run: bun install
+    - run: bun run lint
