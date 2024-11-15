@@ -2,7 +2,7 @@ import { Controller } from '@hotwired/stimulus'
 
 export default class extends Controller {
   connect() {
-    this.onlyNumber = this.data.get('only-number') || false
+    this.onlyNumber = this.element.dataset['onlyNumber'] === 'true'
     this.element.addEventListener('keydown', this.isNumberKey.bind(this))
   }
 
